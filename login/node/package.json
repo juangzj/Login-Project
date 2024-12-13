@@ -12,6 +12,7 @@
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
+    "detect-port": "^2.1.0",
     "express": "^4.21.2",
     "mysql2": "^3.11.5",
     "node": "file:",
