@@ -1,0 +1,40 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Compiled output
+/dist
+/build
+
+# Dependency directories
+/.pnp
+.pnp.js
+
+# dotenv environment variables file
+.env
+
+# Sequelize migrations and database files
+/sequelize-cli.json
+/database
+
+# IDE and editor folders
+.idea/
+.vscode/
+*.sublime-workspace
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Optional: coverage folder for testing reports
+coverage/
+
+# Optional: packages built during development
+package-lock.json
+yarn.lock
