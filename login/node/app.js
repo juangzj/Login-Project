@@ -2,7 +2,9 @@ import express from 'express' // import express
 import detect from 'detect-port'// detect-port import
 import cors from 'cors' // cors import
 import db from './database/bd.js' // database import
+import dotenv from 'dotenv' // dotevn import
 
+dotenv.config(); // Load environment variables from .env file
 
 const DEFAULT_PORT = process.env.PORT || 5000; // handle the app port
 
