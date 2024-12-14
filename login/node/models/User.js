@@ -27,7 +27,7 @@ const UserModel = bd.define('users', {
   }
 });
 
-// hook to password hash before create a new user
+// hook to password hashing before create a new user
 UserModel.beforeCreate(async (user) => {
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(user.password, salt);
