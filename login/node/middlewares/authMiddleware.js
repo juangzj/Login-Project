@@ -1,16 +1,25 @@
-import jwt from 'jsonwebtoken'
+import jwt from 'jsonwebtoken';
 
-export const authMiddleware = (req, res) => {
-  const token = req.headers['authorization']?.split('')[1];
+export const authMiddleware = (req, res, next) => {
+  // Extract the token from the 'Authorization' header
+  const authHeader = req.headers['authorization'];
+  const token = authHeader?.split(' ')[1]; // Split by space to get the token part
 
   if (!token) {
-    return res.status(401).json({ message: 'Acces denied. Token not provided' })
+    return res.status(401).json({ message: 'Access denied. Token not provided' });
   }
+
   try {
+    // Verify the token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; // user infromation in the request
+
+    // Attach user information to the request object
+    req.user = decoded;
+
+    // Pass control to the next middleware or route handler
     next();
   } catch (error) {
-    res.status(401).json({ message: 'Invalid Token or expired' })
+    // Handle invalid or expired token
+    res.status(401).json({ message: 'Invalid or expired token' });
   }
 };
