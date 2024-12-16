@@ -77,4 +77,19 @@ export const login = async (req, res) => {
     console.error(error); // Log for debugging
     res.status(500).json({ message: "Error logging in", error: error.message });
   }
+
+};
+
+
+/**
+ * Method to get all users 
+ */
+export const getAllUsers = async (req, res) => {
+  try {
+    const users = await UserModel.findAll();
+    res.json(users)
+  } catch (error) {
+    res.json('Could not show the users', { menssage: error })
+  }
+
 };
