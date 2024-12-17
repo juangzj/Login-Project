@@ -1,0 +1,97 @@
+/* UserTable.css */
+
+/* Container for the user table component */
+.user-table-container {
+  width: 100%;
+  margin-top: 0px;
+  /* Set margin-top to 100px to push the table down */
+}
+
+/* Header section containing the "Add User" button */
+.header {
+  display: flex;
+  justify-content: center;
+  /* Centers the button horizontally */
+  margin-bottom: 15px;
+}
+
+/* Custom button styling for adding a new user */
+.add-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+/* Container for the table with overflow support */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Custom table styling */
+.custom-table {
+  width: 70%;
+  /* Sets the table width to 70% of the container */
+  margin-top: 10px;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  /* Centers the table horizontally */
+}
+
+/* Styling for table header and cells */
+.custom-table th,
+.custom-table td {
+  padding: 12px;
+  /* Adds padding to table cells */
+  text-align: center;
+  /* Centers text in the cells */
+}
+
+.custom-table th {
+  background-color: #f8f9fa;
+  /* Light background for header */
+}
+
+/* Styling for action buttons */
+.custom-button {
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+.edit-button {
+  background-color: #ffc107;
+  color: white;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Button hover effect */
+.custom-button:hover {
+  opacity: 0.8;
+}
+
+/* Focus effect for buttons */
+.custom-button:focus {
+  outline: none;
+}
+
+/* Cancel button styling */
+.cancel-button {
+  background-color: #6c757d;
+}
+
+/* Save button styling */
+.save-button {
+  background-color: #28a745;
+}
