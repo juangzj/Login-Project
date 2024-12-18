@@ -7,18 +7,27 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  /* Make sure the navbar stays on top of other elements */
+  /* Ensure the navbar stays on top of other elements */
 }
 
-/* Adjust the space below the navbar to avoid content being hidden behind it */
+/* Add space to the login text from the left */
+.navbar .login-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 20px;
+  /* Add 20px space from the left */
+}
+
+/* Add space to the Log Out button on the right */
+.navbar .log-out-btn {
+  margin-right: 20px;
+  /* Add 10px space to the right of the button */
+}
+
+/* Adjust the space below the navbar to prevent content overlap */
 body {
   padding-top: 60px;
   /* Adjust this depending on the navbar height */
-}
-
-.navbar .navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
 }
 
 .navbar .nav-link,
@@ -27,7 +36,9 @@ body {
 }
 
 @media (max-width: 768px) {
-  .navbar .navbar-brand {
+
+  /* Adjust font size for smaller screens */
+  .navbar .login-brand {
     font-size: 1.2rem;
   }
 

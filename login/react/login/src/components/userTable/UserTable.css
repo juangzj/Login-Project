@@ -1,97 +1,48 @@
 /* UserTable.css */
 
-/* Container for the user table component */
-.user-table-container {
-  width: 100%;
-  margin-top: 0px;
-  /* Set margin-top to 100px to push the table down */
-}
-
-/* Header section containing the "Add User" button */
-.header {
-  display: flex;
-  justify-content: center;
-  /* Centers the button horizontally */
-  margin-bottom: 15px;
-}
-
-/* Custom button styling for adding a new user */
-.add-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.add-button:hover {
-  background-color: #0056b3;
-}
-
-/* Container for the table with overflow support */
-.table-container {
-  width: 100%;
-  overflow-x: auto;
-}
-
-/* Custom table styling */
-.custom-table {
-  width: 70%;
-  /* Sets the table width to 70% of the container */
-  margin-top: 10px;
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
-  /* Centers the table horizontally */
-}
-
-/* Styling for table header and cells */
-.custom-table th,
-.custom-table td {
-  padding: 12px;
-  /* Adds padding to table cells */
+/* Center the text in the table headers and cells */
+.table th,
+.table td {
   text-align: center;
-  /* Centers text in the cells */
+  vertical-align: middle;
 }
 
-.custom-table th {
-  background-color: #f8f9fa;
-  /* Light background for header */
-}
-
-/* Styling for action buttons */
-.custom-button {
-  padding: 5px 10px;
-  margin: 0 5px;
-}
-
-.edit-button {
-  background-color: #ffc107;
+/* Dark background for table headers */
+.table th {
+  background-color: #343a40;
   color: white;
 }
 
-.delete-button {
+/* Stripe the rows in the table */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2;
+}
+
+/* Style for buttons */
+button {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+/* Blue color for Edit button */
+button.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Red color for Delete button */
+button.btn-danger {
   background-color: #dc3545;
-  color: white;
+  border-color: #dc3545;
 }
 
-/* Button hover effect */
-.custom-button:hover {
-  opacity: 0.8;
-}
+/* Media query for responsiveness: change font size on smaller screens */
+@media (max-width: 768px) {
+  .table {
+    font-size: 12px;
+  }
 
-/* Focus effect for buttons */
-.custom-button:focus {
-  outline: none;
-}
-
-/* Cancel button styling */
-.cancel-button {
-  background-color: #6c757d;
-}
-
-/* Save button styling */
-.save-button {
-  background-color: #28a745;
+  button {
+    font-size: 12px;
+  }
 }
