@@ -24,8 +24,8 @@ const RegisterPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(createUri, { name: name, lastName: lastName, email: email, password: password });
-      navigate('/login')
+      await axios.post(createUri, { name: name, last_name: lastName, email: email, password: password });
+      navigate('/')
       alert('User created successfully!');
     } catch (error) {
       console.error(error);
