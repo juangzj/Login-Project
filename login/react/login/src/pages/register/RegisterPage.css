@@ -6,7 +6,8 @@ html {
   justify-content: center;
   align-items: center;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #67a14c, #b9e19d);
+  background: linear-gradient(135deg, #3367d6, #87b6f0);
+  /* Blue gradient */
 }
 
 .register-container {
@@ -22,13 +23,15 @@ html {
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Light shadow */
   width: 100%;
   max-width: 400px;
   text-align: center;
 }
 
 .register-box h1 {
-  color: #333;
+  color: #2a4a90;
+  /* Dark blue */
   font-size: 2rem;
   margin-bottom: 20px;
   font-weight: bold;
@@ -38,18 +41,21 @@ input {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #87b6f0;
+  /* Light blue */
   border-radius: 5px;
   font-size: 1rem;
 }
 
 input:focus {
-  border-color: #67a14c;
+  border-color: #3367d6;
+  /* Bright blue */
   outline: none;
 }
 
 button {
-  background-color: #67a14c;
+  background-color: #3367d6;
+  /* Strong blue */
   color: white;
   padding: 12px 20px;
   font-size: 1rem;
@@ -60,11 +66,13 @@ button {
 }
 
 button:hover {
-  background-color: #54803a;
+  background-color: #2552b1;
+  /* Slightly darker blue */
 }
 
 a {
-  color: #67a14c;
+  color: #3367d6;
+  /* Button blue */
   text-decoration: none;
 }
 

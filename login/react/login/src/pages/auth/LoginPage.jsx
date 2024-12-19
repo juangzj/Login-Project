@@ -6,15 +6,32 @@ import './LoginPage.css';
 const loginUri = 'http://localhost:5000/auth/login';
 
 const LoginPage = () => {
+
+  const navigate = useNavigate();// navigate intance to redirect 
+
+  /**
+   * Method to redirect to the register page
+   */
+  const redirectToRegisterPage = () => {
+    navigate('/register')
+
+  }
+
+
+  // User data to login 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
 
+
+  /**
+   * Method to log a user
+   * @param {*} e 
+   */
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await axios.post(loginUri, { email, password });
-      navigate('/UserPage');
+
     } catch (error) {
       console.error(error);
       alert('Error, login failed.');
@@ -43,7 +60,8 @@ const LoginPage = () => {
           <button type="submit">Login</button>
           <p>
             Do not have an account?{' '}
-            <a href="/register">Register here</a>
+            <a href="#" onClick={redirectToRegisterPage}>Register here</a>
+
           </p>
         </form>
       </div>
