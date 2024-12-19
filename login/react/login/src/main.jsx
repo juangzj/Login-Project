@@ -1,16 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-
-//Import the AuthPage component
-// import AuthPage from './pages/auth/AuthPage.jsx'
-import UserPage from './pages/users/UsersPage'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import { BrowserRouter, Routes } from 'react-router-dom';
+import LoginPage from './pages/auth/LoginPage.jsx';
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <UserPage></UserPage>
+    <BrowserRouter>
+      <LoginPage></LoginPage>
+      <Routes>
+        {/* Define the routes */}
 
-  </StrictMode>,
-)
+
+      </Routes>
+    </BrowserRouter>
+  </StrictMode>
+);
