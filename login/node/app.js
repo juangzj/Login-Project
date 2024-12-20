@@ -1,15 +1,15 @@
+import dotenv from 'dotenv'; // Import dotenv
 import express from 'express'; // Import express
 import detect from 'detect-port'; // Import detect-port
 import cors from 'cors'; // Import cors
 import db from './database/bd.js'; // Import database
-import dotenv from 'dotenv'; // Import dotenv
 import authRouter from './routes/authRoutes.js'; // Import routes
 
 dotenv.config(); // Load environment variables from .env file
 
 const DEFAULT_PORT = process.env.PORT || 5000; // Define default app port
 
-// Function to start the server
+// Function to start the servera
 const startServer = async () => {
   // Connect to the database
   try {

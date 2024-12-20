@@ -61,16 +61,17 @@ export const login = async (req, res) => {
       return res.status(401).json({ message: "Incorrect password." });
     }
 
-    // Generate the JWT token
-    if (!process.env.JWT_SECRET) {
-      throw new Error("JWT_SECRET is not defined in the environment variables.");
+    //Generate the JWT token
+    const secret = process.env.JWT_SECRET;
+    if (!secret) {
+      throw new Error("Token is not define in the enviroment variables");
     }
 
     const token = jwt.sign(
-      { id: user.user_id, email: user.email },
-      process.env.JWT_SECRET,
-      { expiresIn: process.env.EXPIRES || "1h" }
+      { id: user.user_id, email: user.email }, secret,
+      { expiresIn: process.env.JWT_EXPIRES || "1h" }
     );
+
 
     res.status(200).json({ message: "Login successful", token });
   } catch (error) {

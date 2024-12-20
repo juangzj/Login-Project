@@ -30,7 +30,14 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(loginUri, { email, password });
+      const response = await axios.post(loginUri, { email: email, password: password });
+      if (response.status === 200) {
+        const { token } = response.data;
+
+        //store the token in local storage
+        localStorage.setItem('authtoken', token);
+        alert('login successful and redirection')
+      }
 
     } catch (error) {
       console.error(error);
