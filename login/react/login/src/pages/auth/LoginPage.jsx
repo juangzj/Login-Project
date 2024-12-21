@@ -36,7 +36,10 @@ const LoginPage = () => {
 
         //store the token in local storage
         localStorage.setItem('authtoken', token);
-        alert('login successful and redirection')
+        alert('login successful')
+        //Redirection to user page
+        navigate('/userPage')
+
       }
 
     } catch (error) {

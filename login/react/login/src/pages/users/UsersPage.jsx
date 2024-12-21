@@ -7,9 +7,9 @@ import UserTable from '../../components/userTable/UserTable.jsx'
 const UserPage = () => {
   return (
     <div>
-      {/* The NavBar is now fixed at the top */}
+      {/* NavBar  */}
       <NavBar />
-      {/* Adding a custom class to UserTable for styling */}
+      {/* UserTable */}
       <UserTable className="custom-table-margin" />
     </div>
   );
