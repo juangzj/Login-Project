@@ -1,14 +1,14 @@
 import 'react';
-import NavBar from '../../components/navbar/Navbar.jsx';  // Importing the NavBar component
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserTable from '../../components/userTable/UserTable.jsx'
+import Nabvar from '../../components/navbar/Navbar.jsx'
 
 // UserPage component
 const UserPage = () => {
   return (
     <div>
-      {/* NavBar  */}
-      <NavBar />
+      {/* NavBar */}
+      <Nabvar />
       {/* UserTable */}
       <UserTable className="custom-table-margin" />
     </div>

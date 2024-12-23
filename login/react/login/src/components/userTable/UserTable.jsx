@@ -1,6 +1,5 @@
 import "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './UserTable.css';
+import userTableStyles from './UserTable.module.css'; // Import the styles
 
 const UserTable = () => {
   const users = [
@@ -10,31 +9,33 @@ const UserTable = () => {
   ];
 
   return (
-    <div className="container mt-4">
-      <h2 className="text-center">User List</h2>
-      <table className="table table-bordered table-striped">
-        <thead className="thead-dark">
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Last Name</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.name}</td>
-              <td>{user.lastName}</td>
-              <td>
-                <button className="btn btn-primary mr-2">Edit</button>
-                <button className="btn btn-danger">Delete</button>
-              </td>
+    <div className={userTableStyles.pageContainer}>
+      <div className={userTableStyles.tableContainer}>
+        <h2 className={userTableStyles.pageTitle}>User List</h2>
+        <table className={userTableStyles.table}>
+          <thead className={userTableStyles.theadDark}>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Last Name</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr key={user.id}>
+                <td>{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.lastName}</td>
+                <td>
+                  <button className={userTableStyles.editButton}>Edit</button>
+                  <button className={userTableStyles.deleteButton}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

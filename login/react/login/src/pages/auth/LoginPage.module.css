@@ -1,0 +1,98 @@
+/* Main container for the login page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Occupy full height */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  /* Light background color */
+}
+
+/* Box containing the form */
+.login-box {
+  width: 95%;
+  /* Makes the box responsive */
+  max-width: 400px;
+  /* Maximum width of the login box */
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Soft shadow for depth */
+}
+
+/* Title styling */
+.login-box h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Input fields styling */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Submit button styling with blue color */
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+}
+
+/* Styling for the register link */
+.login-box p {
+  text-align: center;
+}
+
+.login-box a {
+  color: #007bff;
+  /* Blue color */
+  text-decoration: none;
+}
+
+.login-box a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .login-box {
+    width: 100%;
+    /* Ensure it uses full width on smaller screens */
+    padding: 15px;
+  }
+
+  .login-box h1 {
+    font-size: 24px;
+  }
+
+  .input-field {
+    font-size: 14px;
+  }
+
+  .submit-button {
+    font-size: 14px;
+  }
+}

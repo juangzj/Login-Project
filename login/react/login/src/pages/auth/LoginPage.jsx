@@ -1,47 +1,36 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './LoginPage.css';
+import loginPageStyle from './LoginPage.module.css'; // Import styles as an object
 
 const loginUri = 'http://localhost:5000/auth/login';
 
 const LoginPage = () => {
+  const navigate = useNavigate(); // Instance to redirect
 
-  const navigate = useNavigate();// navigate intance to redirect 
+  // Method to redirect to the register page
+  const redirectToRegister = () => {
+    navigate('/register');
+  };
 
-  /**
-   * Method to redirect to the register page
-   */
-  const redirectToRegisterPage = () => {
-    navigate('/register')
+  // User data for login
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
 
-  }
-
-
-  // User data to login 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-
-  /**
-   * Method to log a user
-   * @param {*} e 
-   */
+  // Method to handle login
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(loginUri, { email: email, password: password });
+      const response = await axios.post(loginUri, { email: userEmail, password: userPassword });
       if (response.status === 200) {
         const { token } = response.data;
 
-        //store the token in local storage
-        localStorage.setItem('authtoken', token);
-        alert('login successful')
-        //Redirection to user page
-        navigate('/userPage')
-
+        // Store the token in localStorage
+        localStorage.setItem('authToken', token);
+        alert('Login successful');
+        // Redirect to user page
+        navigate('/userPage');
       }
-
     } catch (error) {
       console.error(error);
       alert('Error, login failed.');
@@ -49,29 +38,30 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
+    <div className={loginPageStyle['login-container']}>
+      <div className={loginPageStyle['login-box']}>
         <h1>Login</h1>
         <form onSubmit={handleLogin}>
           <input
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={userEmail}
+            onChange={(e) => setUserEmail(e.target.value)}
             required
+            className={loginPageStyle['input-field']} // Class for styling
           />
           <input
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={userPassword}
+            onChange={(e) => setUserPassword(e.target.value)}
             required
+            className={loginPageStyle['input-field']} // Class for styling
           />
-          <button type="submit">Login</button>
+          <button type="submit" className={loginPageStyle['submit-button']}>Login</button>
           <p>
             Do not have an account?{' '}
-            <a href="#" onClick={redirectToRegisterPage}>Register here</a>
-
+            <a href="#" onClick={redirectToRegister}>Register here</a>
           </p>
         </form>
       </div>
