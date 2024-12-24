@@ -94,3 +94,18 @@ export const getAllUsers = async (req, res) => {
   }
 
 };
+
+/**
+ * Mehtod to delete an user by id
+ */
+export const deleteUser = async (req, res) => {
+  try {
+    await UserModel.destroy({
+      where: { user_id: req.params.user_id }
+    })
+    res.json({ 'message': 'User delete' })
+  } catch (error) {
+    res.json({ message: error.message })
+  }
+
+}
