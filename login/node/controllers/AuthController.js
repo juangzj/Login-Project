@@ -101,11 +101,32 @@ export const getAllUsers = async (req, res) => {
 export const deleteUser = async (req, res) => {
   try {
     await UserModel.destroy({
-      where: { user_id: req.params.user_id }
+      where: { user_id: req.params.user_id }// Extract user_id from URL params
     })
     res.json({ 'message': 'User delete' })
   } catch (error) {
     res.json({ message: error.message })
   }
-
 }
+/**
+ * Method to update a user by id
+ */
+export const updateUser = async (req, res) => {
+  try {
+    const { user_id } = req.params; // Extract user_id from URL params
+    const updatedData = req.body;  // Data sent from the client to update the user
+
+    // Update user in the database
+    const [updatedRows] = await UserModel.update(updatedData, {
+      where: { user_id }
+    });
+
+    if (updatedRows === 0) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.json({ message: 'User successfully updated' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
