@@ -17,6 +17,9 @@ const UserTable = () => {
     getAllUsers();
   }, []);
 
+  /**
+   * Method to get all users
+   */
   const getAllUsers = async () => {
     try {
       const res = await axios.get(ShowUserBlogs);
@@ -27,11 +30,15 @@ const UserTable = () => {
     }
   };
 
+  //Handle modal edit
   const handleEdit = (user) => {
     setCurrentUser(user);
     setIsModalOpen(true);
   };
 
+  /**
+   * Method to update user
+   */
   const handleSave = async () => {
     try {
       await axios.put(`http://localhost:5000/auth/updateUser/${currentUser.user_id}`, currentUser);
@@ -42,7 +49,9 @@ const UserTable = () => {
       console.error(error);
     }
   };
-
+  /**
+   * Method to delete user
+   */
   const handleDelete = async (user_id) => {
     try {
       await axios.delete(`http://localhost:5000/auth/deleteUser/${user_id}`);
@@ -53,6 +62,7 @@ const UserTable = () => {
     }
   };
 
+  // To close modal 
   const closeModal = () => {
     setIsModalOpen(false);
     setCurrentUser(null);
